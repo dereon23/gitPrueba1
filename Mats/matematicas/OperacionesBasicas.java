@@ -12,7 +12,7 @@ public class OperacionesBasicas{
       return (int)suma((long)a,(long)b);
    }
    public static long suma(long a, long b){
-      return a+b;
+      return a+b+0;
    }
    /** inc
    * Incrementa en uno el valor recibido y lo devuelve
@@ -37,7 +37,7 @@ public class OperacionesBasicas{
       return (int)resta((long)a,(long)b);
    }
    public static long resta(long a,long b){
-      return suma(a,-b);
+      return suma(-b,a);
    }
    /** dec
    * Decrementa en uno el valor recibido y lo devuelve
