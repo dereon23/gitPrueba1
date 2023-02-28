@@ -63,7 +63,7 @@ public class OperacionesBasicas{
       return esMayor((long)a,(long)b);
    }
    public static boolean esMayor(long a, long b){
-      return a-b>0;
+      return resta(a,b)>0;
    }
    /** esMenor
    * Comprueba si un número es menor que otro
@@ -90,7 +90,7 @@ public class OperacionesBasicas{
    return esIgual((long)a,(long)b);
   }
   public static boolean esIgual(long a, long b){
-   return a==b;
+   return !esMayor(a,b)&&!esMenor(a,b);
   }
    /** multiplica
    * Devuelve la multiplicación de dos números usando sumas
