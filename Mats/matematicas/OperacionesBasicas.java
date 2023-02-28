@@ -100,11 +100,15 @@ public class OperacionesBasicas{
    * @return El resultado de sumar b veces a
    */
   public static int multiplica(int a, int b){
-      return (int)multiplica((long)a, (long)b);
-  }
-  public static long multiplica(long a, long b){
-      return a*b;
-  }
+    return (int)multiplica((long)a, (long)b);
+}
+public static long multiplica(long a, long b){
+    long mult=0;
+    for(long i=0; esMenor(i,b); i=inc(i)){
+       mult=suma(mult,a);
+    }
+    return mult;
+}
    /** divide
    * Devuelve el cociente de la división entera de dos números usando restas
    * <p>
