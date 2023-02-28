@@ -12,7 +12,7 @@ public class OperacionesBasicas{
       return (int)suma((long)a,(long)b);
    }
    public static long suma(long a, long b){
-      return a+b+0;
+      return a+b;
    }
    /** inc
    * Incrementa en uno el valor recibido y lo devuelve
@@ -37,7 +37,7 @@ public class OperacionesBasicas{
       return (int)resta((long)a,(long)b);
    }
    public static long resta(long a,long b){
-      return suma(-b,a);
+      return suma(a,-b);
    }
    /** dec
    * Decrementa en uno el valor recibido y lo devuelve
@@ -100,15 +100,11 @@ public class OperacionesBasicas{
    * @return El resultado de sumar b veces a
    */
   public static int multiplica(int a, int b){
-    return (int)multiplica((long)a, (long)b);
-}
-public static long multiplica(long a, long b){
-    long mult=0;
-    for(long i=0; esMenor(i,b); i=inc(i)){
-       mult=suma(mult,a);
-    }
-    return mult;
-}
+      return (int)multiplica((long)a, (long)b);
+  }
+  public static long multiplica(long a, long b){
+      return a*b;
+  }
    /** divide
    * Devuelve el cociente de la división entera de dos números usando restas
    * <p>
@@ -121,12 +117,7 @@ public static long multiplica(long a, long b){
    return (int)divide((long)a,(long)b);
   }
   public static long divide(long a, long b){
-   long div=0;
-   while(esMayor(a, b)||esIgual(a, b)){
-      div=inc(div);
-      a=resta(a, b);
-   }
-   return div;
+   return a/b;
   }
    /** resto
    * Devuelve el resto de la división entera
@@ -139,7 +130,7 @@ public static long multiplica(long a, long b){
       return (int)resto((long)a,(long)b);
   }
   public static long resto(long a, long b){
-      return resta(a, multiplica(divide(a,b),b));
+      return a%b;
   }
    /** potencia
    * Devuelve la potencia de un número elevado a otro
@@ -153,12 +144,8 @@ public static long multiplica(long a, long b){
    return (int)potencia((long)base,(long)exponente);
   }
   public static long potencia(long base, long exponente){
-   long pot=1;
-   for(long i=0; esMenor(i,exponente);i=inc(i)){
-      pot=multiplica(pot, base);
-   }
-   return pot;
-}
+      return (long)Math.pow(base,exponente);
+  }
    /** cuadrado
    * Devuelve la potencia de un número elevado a 2
    * <p>
